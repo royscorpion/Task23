@@ -16,12 +16,13 @@ namespace Task23
             int n = InputIntNumber();
             _ = FactorialAsync(n);
             DegreeOf(n);
-            Console.WriteLine("Нажмите любую клавишу для завершения...");
+            Thread.Sleep(100);
+            Console.WriteLine("\nНажмите любую клавишу для завершения...");
             Console.ReadKey();
         }
         static async Task FactorialAsync(int n)
         {
-            Console.WriteLine($"{n}! = {await Task.Run(() => Factorial(n))}");
+            Console.WriteLine($"\n{n}! = {await Task.Run(() => Factorial(n))}");
         }
         static int Factorial(int n)
         {
@@ -41,7 +42,7 @@ namespace Task23
                 Console.WriteLine($"DegreeOf. Итерация {i-1}: {d} * {n} = {d *= n}");
                 Thread.Sleep(200);
             }
-            Console.WriteLine($"{n}^{n} = {d}");
+            Console.WriteLine($"\n{n}^{n} = {d}");
             return d;
         }
         //Проверка корректности введенных данных (integer)
